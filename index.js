@@ -6,7 +6,7 @@ var port = 3900;
 
 mongoose.set('useFindAndModify', false);
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/api_rest_blog', { useNewUrlParser: true })
+mongoose.connect('mongodb+srv://user_node:Leof1234@cluster0.mkk5tab.mongodb.net/test2', { useNewUrlParser: true })
         .then(() => {
             console.log('Conexión a la base de datos correcta !!!');
 
