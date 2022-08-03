@@ -1,14 +1,14 @@
 'use strict'
 
 // Cargar modulos de node para crear servidor
-var express = require('express');
-var bodyParser = require('body-parser');
+const express = require('express');
+const bodyParser = require('body-parser');
 
 // Ejecutar express (http)
-var app = express();
+const app = express();
 
 // Cargar ficheros rutas
-var article_routes = require('./routes/article');
+const article_routes = require('./routes/article');
 
 // Middlewares 
 app.use(bodyParser.urlencoded({extended:false}));

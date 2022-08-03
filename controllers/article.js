@@ -1,10 +1,10 @@
 'use strict'
 
-var validator = require('validator');
-var fs = require('fs');
-var path = require('path');
+const validator = require('validator');
+const fs = require('fs');
+const path = require('path');
 
-var Article = require('../models/article');
+const Article = require('../models/article');
 
 var controller = {
 

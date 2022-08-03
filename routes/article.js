@@ -1,7 +1,7 @@
 'use strict'
 
-var express = require('express');
-var ArticleController = require('../controllers/article');
+const express = require('express');
+const ArticleController = require('../controllers/article');
 
 var router = express.Router();
 
@@ -21,5 +21,7 @@ router.delete('/article/:id', ArticleController.delete);
 router.post('/upload-image/:id?', md_upload, ArticleController.upload);
 router.get('/get-image/:image', ArticleController.getImage);
 router.get('/search/:search', ArticleController.search);
+
+
 
 module.exports = router;
