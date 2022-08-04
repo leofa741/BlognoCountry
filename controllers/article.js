@@ -302,12 +302,16 @@ var controller = {
         if (file) {
 
             return res.sendFile(path.resolve(path_file));
-        } else {
-            return res.status(404).send({
-                status: 'error',
-                message: 'La imagen no existe !!!'
-            });
+        
+
         }
+           else{
+                
+                return res.status(200).send({
+                    status: 'error',
+                    message: 'No existe la imagen !!!'
+                });
+            }
 
     },
 
