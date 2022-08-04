@@ -1,7 +1,9 @@
 'use strict'
 
 const validator = require('validator');
-const fs = require('fs');
+const {fs,stat} = require('fs');
+const {exists}=('express');
+
 const path = require('path');
 
 const Article = require('../models/article');
@@ -285,38 +287,28 @@ var controller = {
                             status: 'success',
                             article: articleUpdated
                         });
-                    });
+                    });                  
+                  
                     
-
-
-                    
-                    
-                }
-
-                               
-
-
-
-
-
+                }    
     },
 
    
 
     getImage: (req, res) => {
         var file = req.params.image;
-        var path_file = './upload/articles/'+file;
+        var path_file = './upload/articles/' + file;
 
-        fs.exists(path_file, (exists) => {
-            if(exists){
-                return res.sendFile(path.resolve(path_file));
-            }else{
-                return res.status(404).send({
-                    status: 'error',
-                    message: 'La imagen no existe !!!'
-                });
-            }
-        });
+        if (file) {
+
+            return res.sendFile(path.resolve(path_file));
+        } else {
+            return res.status(404).send({
+                status: 'error',
+                message: 'La imagen no existe !!!'
+            });
+        }
+
     },
 
     search: (req, res) => {
